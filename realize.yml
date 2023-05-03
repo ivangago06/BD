@@ -1,0 +1,18 @@
+settings:
+  legacy:
+    force: true
+  path:
+    - ./src
+  system_properties:
+    GIN_MODE: release
+monitor:
+  - name: main
+    path: .
+    extensions:
+      - go
+    tasks:
+      - name: build
+        command: go build -o main
+      - name: run
+        command: ./main
+        auto_restart: false
